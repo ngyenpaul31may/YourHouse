@@ -525,66 +525,79 @@ button {
    ========================================================================== */
 
 .quality-section {
-  padding: 20px 0 92px;
+  padding: 36px 0 96px;
 }
 
 .quality-header {
   display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
-  gap: 32px;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 390px);
+  gap: 36px;
   align-items: start;
-  margin-bottom: 52px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid var(--border-subtle);
+  margin-bottom: 38px;
+}
+
+.quality-heading {
+  font-size: clamp(2.85rem, 4.8vw, 4.35rem);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 1.02;
 }
 
 .quality-status {
-  padding-top: 8px;
+  padding-top: 6px;
 }
 
 .quality-status-title {
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: 8px;
+  font-size: 1.25rem;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
 }
 
 .quality-status-desc {
-  font-size: 0.7rem;
-  line-height: 1.55;
+  font-size: 0.875rem;
+  line-height: 1.48;
   color: var(--text-secondary);
-  max-width: 290px;
+  max-width: 390px;
 }
 
 .specs-grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 20px;
-  margin-bottom: 36px;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) auto;
+  gap: 24px;
+  margin-bottom: 48px;
+  align-items: start;
 }
 
 .spec-item {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 12px;
 }
 
 .spec-label {
-  font-size: 0.68rem;
-  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--text-secondary);
 }
 
 .spec-value {
-  font-size: clamp(1.1rem, 1.8vw, 1.45rem);
+  font-size: clamp(1.65rem, 2.4vw, 2.3rem);
   font-weight: 500;
-  letter-spacing: -0.02em;
-  line-height: 1.15;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
   color: var(--text-primary);
+  white-space: pre-line;
 }
 
 .quality-showcase {
   position: relative;
-  border-radius: var(--radius-lg);
+  border-radius: 24px;
   overflow: hidden;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 16 / 8.2;
   background-color: #141820;
 }
 
@@ -604,22 +617,35 @@ button {
   inset: 0;
   background: linear-gradient(
     to top,
-    rgba(8, 12, 18, 0.78) 0%,
-    rgba(8, 12, 18, 0.28) 42%,
-    transparent 75%
+    rgba(8, 12, 18, 0.72) 0%,
+    rgba(8, 12, 18, 0.25) 45%,
+    transparent 78%
   );
   pointer-events: none;
 }
 
-.quality-quote {
+.quality-overlay {
   position: absolute;
-  left: 36px;
-  bottom: 34px;
-  max-width: 560px;
-  font-size: clamp(0.9rem, 1.3vw, 1.06rem);
+  left: 48px;
+  right: 48px;
+  bottom: 38px;
+  z-index: 2;
+}
+
+.quality-overlay-rule {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.72);
+  margin-bottom: 22px;
+}
+
+.quality-quote {
+  max-width: 680px;
+  font-size: clamp(1.15rem, 1.85vw, 1.55rem);
   font-weight: 400;
-  line-height: 1.45;
-  color: rgba(255, 255, 255, 0.94);
+  line-height: 1.38;
+  letter-spacing: -0.015em;
+  color: #ffffff;
 }
 
 /* ==========================================================================
@@ -1041,6 +1067,18 @@ button {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  .quality-header {
+    grid-template-columns: 1fr;
+    padding-bottom: 32px;
+    margin-bottom: 28px;
+  }
+
+  .quality-overlay {
+    left: 28px;
+    right: 28px;
+    bottom: 26px;
+  }
+
   .belief-card {
     grid-template-columns: 1fr;
   }
@@ -1083,11 +1121,19 @@ button {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .quality-quote {
+  .quality-overlay {
     position: static;
     padding: 20px;
     background-color: #111315;
+  }
+
+  .quality-overlay-rule {
+    margin-bottom: 14px;
+  }
+
+  .quality-quote {
     max-width: none;
+    font-size: 1rem;
   }
 
   .quality-showcase {
