@@ -772,41 +772,102 @@ button {
   margin-bottom: 42px;
 }
 
-.experiences-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px;
-}
-
-.exp-card {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.exp-media {
-  border-radius: var(--radius-md);
+.blinds-stage {
+  --blind-base-skew: -6deg;
+  height: 520px;
+  padding: 0 52px;
   overflow: hidden;
-  aspect-ratio: 16 / 10;
-  background-color: #16181d;
 }
 
-.exp-media img {
+.blinds {
+  --blind-lean: 0deg;
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+  height: 100%;
+}
+
+.blind-item {
+  --blind-squeeze: 1;
+  --blind-skew: calc(var(--blind-base-skew, -6deg) + var(--blind-lean, 0deg));
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  background-color: #14161b;
+  text-align: left;
+  transform: skewX(var(--blind-skew));
+  transform-origin: center;
+  will-change: flex-grow, transform;
+  cursor: pointer;
+}
+
+.blind-media {
+  position: absolute;
+  top: -12px;
+  bottom: -12px;
+  left: -64px;
+  right: -64px;
+  transform: skewX(calc(var(--blind-skew) * -1)) scaleX(var(--blind-squeeze, 1));
+  transform-origin: center;
+  will-change: transform;
+}
+
+.blind-media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  filter: brightness(0.76);
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), filter 0.4s ease;
 }
 
-.exp-card:hover .exp-media img {
-  transform: scale(1.03);
+.blind-item.is-active .blind-media img {
+  filter: brightness(1);
+  transform: scale(1.02);
 }
 
-.exp-caption {
-  font-size: 1.15rem;
+.blind-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.72) 0%,
+    rgba(0, 0, 0, 0.16) 45%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.blind-item.is-active .blind-scrim {
+  opacity: 1;
+}
+
+.blind-label {
+  position: absolute;
+  left: 28px;
+  right: 24px;
+  bottom: 22px;
+  z-index: 2;
+  font-size: 1.05rem;
   font-weight: 400;
   letter-spacing: -0.015em;
+  line-height: 1.2;
   color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transform: skewX(calc(var(--blind-skew) * -1)) translateY(8px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.blind-item.is-active .blind-label {
+  opacity: 1;
+  transform: skewX(calc(var(--blind-skew) * -1)) translateY(0);
 }
 
 /* ==========================================================================
@@ -1030,6 +1091,55 @@ button {
 }
 
 /* ==========================================================================
+   Scroll To Top Button
+   ========================================================================== */
+
+.scroll-top-btn {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  z-index: 40;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(17, 19, 21, 0.78);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(12px);
+  transition: opacity var(--transition), transform var(--transition),
+    background-color var(--transition), border-color var(--transition);
+}
+
+.scroll-top-btn.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.scroll-top-btn.is-visible:hover {
+  transform: translateY(-2px);
+  background: rgba(17, 19, 21, 0.94);
+  border-color: rgba(255, 255, 255, 0.36);
+}
+
+:root[data-theme="dark"] .scroll-top-btn {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.24);
+}
+
+:root[data-theme="dark"] .scroll-top-btn.is-visible:hover {
+  background: rgba(255, 255, 255, 0.24);
+}
+
+/* ==========================================================================
    Reveal Motion
    ========================================================================== */
 
@@ -1127,9 +1237,25 @@ button {
   }
 
   .spaces-bento,
-  .quality-header,
-  .experiences-grid {
+  .quality-header {
     grid-template-columns: 1fr;
+  }
+
+  .blinds-stage {
+    --blind-base-skew: -3deg;
+    height: 420px;
+    padding: 0 12px;
+  }
+
+  .blind-item {
+    border-radius: 14px;
+  }
+
+  .blind-label {
+    left: 14px;
+    right: 14px;
+    bottom: 16px;
+    font-size: 0.92rem;
   }
 
   .photo-card--wide {
@@ -1196,6 +1322,13 @@ button {
   .footer-top {
     flex-direction: column;
     padding-bottom: 36px;
+  }
+
+  .scroll-top-btn {
+    right: 18px;
+    bottom: 18px;
+    width: 40px;
+    height: 40px;
   }
 }
 

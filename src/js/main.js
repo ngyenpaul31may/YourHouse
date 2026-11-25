@@ -95,6 +95,28 @@
     items.forEach((el) => observer.observe(el));
   }
 
+  function initScrollTop() {
+    const btn = document.querySelector("[data-scroll-top]");
+    if (!btn) return;
+
+    const reducedMotion =
+      window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    const syncVisibility = () => {
+      btn.classList.toggle("is-visible", window.scrollY > 420);
+    };
+
+    syncVisibility();
+    window.addEventListener("scroll", syncVisibility, { passive: true });
+    btn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: reducedMotion ? "auto" : "smooth",
+      });
+    });
+  }
+
   async function bootstrap() {
     if (window.AppTheme) {
       window.AppTheme.init();
@@ -104,9 +126,14 @@
       await window.AppI18n.init();
     }
 
+    if (window.AppBlinds) {
+      window.AppBlinds.init();
+    }
+
     initMobileMenu();
     initActiveNav();
     initReveal();
+    initScrollTop();
   }
 
   document.addEventListener("DOMContentLoaded", bootstrap);

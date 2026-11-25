@@ -39,6 +39,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <script src="js/i18n.js" defer></script>
     <script src="js/theme.js" defer></script>
+    <script src="js/blinds.js" defer></script>
     <script src="js/main.js" defer></script>
   </head>
   <body>
@@ -404,32 +405,108 @@
             <span data-i18n="experiences.titleLine2">experiencing.</span>
           </h2>
 
-          <div class="experiences-grid reveal">
-            <article class="exp-card">
-              <div class="exp-media">
-                <img
-                  src="assets/images/exp-waterfront.jpg"
-                  alt="Sculptural angular white concrete luxury waterfront villa at dusk"
-                  loading="lazy"
-                />
-              </div>
-              <h3 class="exp-caption" data-i18n="experiences.item1">
-                Luxury waterfront villa
-              </h3>
-            </article>
+          <div class="blinds-stage reveal">
+            <div
+              class="blinds"
+              data-blinds
+              role="region"
+              aria-label="Featured architectural residences"
+            >
+              <button
+                type="button"
+                class="blind-item is-active"
+                data-href="#projects"
+                aria-pressed="true"
+              >
+                <div class="blind-media">
+                  <img
+                    src="assets/images/exp-waterfront.jpg"
+                    alt="Sculptural angular white concrete luxury waterfront villa at dusk"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="blind-scrim" aria-hidden="true"></div>
+                <span class="blind-label" data-i18n="experiences.item1">
+                  Luxury waterfront villa
+                </span>
+              </button>
 
-            <article class="exp-card">
-              <div class="exp-media">
-                <img
-                  src="assets/images/exp-soles.jpg"
-                  alt="Organic curved travertine concrete modern residence"
-                  loading="lazy"
-                />
-              </div>
-              <h3 class="exp-caption" data-i18n="experiences.item2">
-                The soles house
-              </h3>
-            </article>
+              <button
+                type="button"
+                class="blind-item"
+                data-href="#about"
+                aria-pressed="false"
+              >
+                <div class="blind-media">
+                  <img
+                    src="assets/images/exp-soles.jpg"
+                    alt="Organic curved travertine concrete modern residence"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="blind-scrim" aria-hidden="true"></div>
+                <span class="blind-label" data-i18n="experiences.item2">
+                  The soles house
+                </span>
+              </button>
+
+              <button
+                type="button"
+                class="blind-item"
+                data-href="#about"
+                aria-pressed="false"
+              >
+                <div class="blind-media">
+                  <img
+                    src="assets/images/space-customized.jpg"
+                    alt="Modernist concrete and glass hillside villa at sunset"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="blind-scrim" aria-hidden="true"></div>
+                <span class="blind-label" data-i18n="experiences.item3">
+                  Hillside concrete retreat
+                </span>
+              </button>
+
+              <button
+                type="button"
+                class="blind-item"
+                data-href="#contact"
+                aria-pressed="false"
+              >
+                <div class="blind-media">
+                  <img
+                    src="assets/images/cta-modern-house.jpg"
+                    alt="Desert modern angular concrete residence with infinity pool at dusk"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="blind-scrim" aria-hidden="true"></div>
+                <span class="blind-label" data-i18n="experiences.item4">
+                  Desert pavilion residence
+                </span>
+              </button>
+
+              <button
+                type="button"
+                class="blind-item"
+                data-href="#services"
+                aria-pressed="false"
+              >
+                <div class="blind-media">
+                  <img
+                    src="assets/images/space-elegant.jpg"
+                    alt="Warm sandstone and terracotta luxury modern house at twilight"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="blind-scrim" aria-hidden="true"></div>
+                <span class="blind-label" data-i18n="experiences.item5">
+                  Terracotta courtyard villa
+                </span>
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -526,5 +603,23 @@
 
       <div class="footer-wordmark" data-i18n="footer.wordmark">yourhouse</div>
     </footer>
+
+    <button
+      type="button"
+      class="scroll-top-btn"
+      data-scroll-top
+      data-i18n-aria="nav.backToTopAria"
+      aria-label="Back to top"
+    >
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path
+          d="M12 19V5M5 12L12 5L19 12"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </button>
   </body>
 </html>

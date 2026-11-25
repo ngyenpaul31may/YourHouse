@@ -17,7 +17,8 @@
     "studio": "STUDIO",
     "contact": "LIÊN HỆ",
     "work": "Tác phẩm",
-    "menuAria": "Mở hoặc đóng menu điều hướng"
+    "menuAria": "Mở hoặc đóng menu điều hướng",
+    "backToTopAria": "Lên đầu trang"
   },
   "hero": {
     "brand": "YOURHOUSE",
@@ -63,7 +64,10 @@
     "titleLine1": "Những không gian",
     "titleLine2": "đáng trải nghiệm.",
     "item1": "Biệt thự ven biển cao cấp",
-    "item2": "Ngôi nhà Soles"
+    "item2": "Ngôi nhà Soles",
+    "item3": "Biệt thự bê tông triền đồi",
+    "item4": "Biệt thự sa mạc hiện đại",
+    "item5": "Biệt thự sân vườn đất nung"
   },
   "belief": {
     "titleLine1": "Nơi ý tưởng táo bạo",

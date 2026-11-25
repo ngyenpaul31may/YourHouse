@@ -17,7 +17,8 @@
     "studio": "STUDIO",
     "contact": "CONTACT US",
     "work": "Work",
-    "menuAria": "Toggle navigation menu"
+    "menuAria": "Toggle navigation menu",
+    "backToTopAria": "Back to top"
   },
   "hero": {
     "brand": "YOURHOUSE",
@@ -63,7 +64,10 @@
     "titleLine1": "Spaces worth",
     "titleLine2": "experiencing.",
     "item1": "Luxury waterfront villa",
-    "item2": "The soles house"
+    "item2": "The soles house",
+    "item3": "Hillside concrete retreat",
+    "item4": "Desert pavilion residence",
+    "item5": "Terracotta courtyard villa"
   },
   "belief": {
     "titleLine1": "Where bold ideas",
