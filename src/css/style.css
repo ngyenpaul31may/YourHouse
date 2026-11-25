@@ -1,0 +1,224 @@
+/* ==========================================================================
+   YourHouse — Starter Stylesheet & Design Tokens
+   Supports Light (default) & Dark themes via [data-theme]
+   ========================================================================== */
+
+:root {
+  --bg-canvas: #f4f5f7;
+  --bg-surface: #ffffff;
+  --bg-elevated: #f9fafb;
+
+  --text-primary: #14161a;
+  --text-secondary: #565c68;
+  --text-muted: #5c6370;
+
+  --accent-blue: #2b50ec;
+  --accent-blue-bright: #4f75ff;
+  --badge-mint-bg: #cdf4d8;
+  --badge-mint-fg: #14532d;
+
+  --border-subtle: rgba(17, 24, 39, 0.08);
+  --shadow-soft: 0 10px 30px rgba(17, 24, 39, 0.06);
+
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 26px;
+  --radius-pill: 9999px;
+
+  --max-width: 1180px;
+  --transition: 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:root[data-theme="dark"] {
+  --bg-canvas: #0b0d12;
+  --bg-surface: #141720;
+  --bg-elevated: #1b1f2c;
+
+  --text-primary: #f4f6fa;
+  --text-secondary: #adb5c4;
+  --text-muted: #9aa3b2;
+
+  --accent-blue: #6d8dff;
+  --accent-blue-bright: #8aa4ff;
+  --badge-mint-bg: rgba(16, 163, 127, 0.2);
+  --badge-mint-fg: #6ee7b7;
+
+  --border-subtle: rgba(255, 255, 255, 0.1);
+  --shadow-soft: 0 12px 32px rgba(0, 0, 0, 0.36);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.55;
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Minimal Starter Controls */
+.starter-header {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border-subtle);
+  background-color: var(--bg-surface);
+}
+
+.starter-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.starter-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+
+.starter-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.control-pill {
+  display: inline-flex;
+  padding: 3px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-subtle);
+  background-color: var(--bg-elevated);
+}
+
+.lang-btn,
+.theme-toggle {
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: background-color var(--transition), color var(--transition);
+}
+
+.lang-btn.is-active {
+  background-color: var(--text-primary);
+  color: var(--bg-canvas);
+}
+
+.theme-toggle {
+  border: 1px solid var(--border-subtle);
+  background-color: var(--bg-elevated);
+}
+
+.starter-main {
+  padding: 72px 0;
+}
+
+.starter-card {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 36px;
+  border-radius: var(--radius-lg);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-soft);
+}
+
+.starter-eyebrow {
+  display: inline-block;
+  margin-bottom: 12px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--accent-blue);
+}
+
+.starter-title {
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  font-weight: 500;
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+
+.starter-subtitle {
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+.starter-badge {
+  display: inline-flex;
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  background-color: var(--badge-mint-bg);
+  color: var(--badge-mint-fg);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

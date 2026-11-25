@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "title": "YourHouse | Nhà Ở Kiến Trúc & Bất Động Sản",
+    "description": "Khung mã nguồn YourHouse dành cho nhà ở kiến trúc, biệt thự và bất động sản hiện đại với đa ngôn ngữ mặc định Tiếng Anh và 2 theme Sáng/Tối."
+  },
+  "theme": {
+    "light": "Sáng",
+    "dark": "Tối",
+    "switchToDark": "Chuyển sang giao diện tối",
+    "switchToLight": "Chuyển sang giao diện sáng"
+  },
+  "app": {
+    "brand": "YourHouse",
+    "eyebrow": "KHUNG MÃ NGUỒN KHỞI TẠO",
+    "title": "Mã Nguồn YourHouse Đã Sẵn Sàng",
+    "subtitle": "Cấu trúc HTML5, CSS3 design tokens, hệ thống đa ngôn ngữ i18n (mặc định Tiếng Anh EN / Tiếng Việt VI) và 2 theme Sáng & Tối đã sẵn sàng để phát triển giao diện.",
+    "statusReady": "i18n & Theme Đang Hoạt Động"
+  }
+}

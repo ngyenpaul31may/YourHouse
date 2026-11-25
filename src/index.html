@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YourHouse | Architectural Homes &amp; Real Estate</title>
+    <meta
+      name="description"
+      content="YourHouse starter platform for architectural houses, villas, and modern real estate with English-first i18n and Light/Dark themes."
+    />
+    <meta
+      property="og:title"
+      content="YourHouse | Architectural Homes &amp; Real Estate"
+    />
+    <meta
+      property="og:description"
+      content="YourHouse starter platform for architectural houses, villas, and modern real estate with English-first i18n and Light/Dark themes."
+    />
+    <meta property="og:type" content="website" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+    <script>
+      (() => {
+        try {
+          const saved = localStorage.getItem("yourhouse_theme");
+          const theme = saved === "light" || saved === "dark" ? saved : "light";
+          document.documentElement.dataset.theme = theme;
+          document.documentElement.style.colorScheme = theme;
+        } catch {}
+      })();
+    </script>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/i18n.js" defer></script>
+    <script src="js/theme.js" defer></script>
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <header class="starter-header">
+      <div class="container starter-header-inner">
+        <a href="#" class="starter-brand">
+          <img
+            src="assets/images/favicon.svg"
+            alt=""
+            width="28"
+            height="28"
+          />
+          <span data-i18n="app.brand">YourHouse</span>
+        </a>
+
+        <div class="starter-controls">
+          <div class="control-pill" role="group" aria-label="Language switcher">
+            <button
+              type="button"
+              class="lang-btn is-active"
+              data-lang-btn="en"
+              aria-pressed="true"
+            >
+              EN
+            </button>
+            <button
+              type="button"
+              class="lang-btn"
+              data-lang-btn="vi"
+              aria-pressed="false"
+            >
+              VI
+            </button>
+          </div>
+
+          <button
+            type="button"
+            class="theme-toggle"
+            data-theme-toggle
+            aria-pressed="false"
+            aria-label="Switch to dark theme"
+          >
+            <span data-theme-label>Dark</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="starter-main">
+      <div class="container">
+        <section class="starter-card">
+          <span class="starter-eyebrow" data-i18n="app.eyebrow">
+            STARTER FOUNDATION
+          </span>
+          <h1 class="starter-title" data-i18n="app.title">
+            YourHouse Source Ready
+          </h1>
+          <p class="starter-subtitle" data-i18n="app.subtitle">
+            Modular HTML5, CSS3 design tokens, English-first i18n (EN / VI), and
+            Light &amp; Dark theme support are configured and ready for UI
+            sections.
+          </p>
+          <span class="starter-badge" data-i18n="app.statusReady">
+            i18n &amp; Theme Modules Active
+          </span>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "title": "YourHouse | Architectural Homes & Real Estate",
+    "description": "YourHouse starter platform for architectural houses, villas, and modern real estate with English-first i18n and Light/Dark themes."
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "switchToDark": "Switch to dark theme",
+    "switchToLight": "Switch to light theme"
+  },
+  "app": {
+    "brand": "YourHouse",
+    "eyebrow": "STARTER FOUNDATION",
+    "title": "YourHouse Source Ready",
+    "subtitle": "Modular HTML5, CSS3 design tokens, English-first i18n (EN / VI), and Light & Dark theme support are configured and ready for UI sections.",
+    "statusReady": "i18n & Theme Modules Active"
+  }
+}
