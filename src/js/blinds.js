@@ -23,6 +23,11 @@
     return [nextW, nextV];
   }
 
+  function shouldNavigateOnClick({ isActive, pointerType, hasHover }) {
+    if (pointerType === "touch" || !hasHover) return false;
+    return Boolean(isActive);
+  }
+
   function mountBlinds(root) {
     const items = Array.from(root.querySelectorAll(".blind-item"));
     if (!items.length) return;
@@ -167,14 +172,38 @@
       }, opts.autoPlay);
     }
 
+    const hasHover =
+      !window.matchMedia || !window.matchMedia("(hover: none)").matches;
+    let lastPointerType = "";
+
     items.forEach((el, i) => {
-      el.addEventListener("pointerenter", () => setActive(i));
-      el.addEventListener("focus", () => setActive(i));
+      el.addEventListener("pointerdown", (event) => {
+        lastPointerType = event.pointerType || "";
+      });
+      el.addEventListener("pointerenter", (event) => {
+        if (event.pointerType === "mouse") setActive(i);
+      });
+      el.addEventListener("focus", () => {
+        if (
+          lastPointerType !== "touch" &&
+          (!el.matches || el.matches(":focus-visible"))
+        ) {
+          setActive(i);
+        }
+      });
       el.addEventListener("click", () => {
-        if (i === active) {
+        const shouldNav = shouldNavigateOnClick({
+          isActive: i === active,
+          pointerType: lastPointerType,
+          hasHover,
+        });
+        lastPointerType = "";
+
+        if (shouldNav) {
           navigateTo(el);
         } else {
           setActive(i);
+          startAutoPlay();
         }
       });
       el.addEventListener("keydown", (event) => {
@@ -192,14 +221,14 @@
       });
     });
 
-    root.addEventListener("pointerenter", () => {
-      paused = true;
+    root.addEventListener("pointerenter", (event) => {
+      if (event.pointerType === "mouse") paused = true;
     });
-    root.addEventListener("pointerleave", () => {
-      paused = false;
+    root.addEventListener("pointerleave", (event) => {
+      if (event.pointerType === "mouse") paused = false;
     });
     root.addEventListener("focusin", () => {
-      paused = true;
+      if (lastPointerType !== "touch") paused = true;
     });
     root.addEventListener("focusout", (event) => {
       if (!root.contains(event.relatedTarget)) paused = false;
@@ -219,9 +248,9 @@
   }
 
   if (typeof window !== "undefined") {
-    window.AppBlinds = { init, stepSpring };
+    window.AppBlinds = { init, stepSpring, shouldNavigateOnClick };
   }
   if (typeof module !== "undefined" && module.exports) {
-    module.exports = { stepSpring };
+    module.exports = { stepSpring, shouldNavigateOnClick };
   }
 })();

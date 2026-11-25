@@ -801,6 +801,12 @@ button {
   transform-origin: center;
   will-change: flex-grow, transform;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.blind-item:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.65);
+  outline-offset: -2px;
 }
 
 .blind-media {
@@ -1252,10 +1258,15 @@ button {
   }
 
   .blind-label {
-    left: 14px;
-    right: 14px;
+    left: 16px;
+    right: 16px;
     bottom: 16px;
-    font-size: 0.92rem;
+    font-size: 0.88rem;
+    line-height: 1.25;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    text-wrap: balance;
   }
 
   .photo-card--wide {
