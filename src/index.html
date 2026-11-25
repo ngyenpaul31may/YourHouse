@@ -3,25 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>YourHouse | Architectural Homes &amp; Real Estate</title>
+    <title>YourHouse | Designing Spaces That Shape Experiences</title>
     <meta
       name="description"
-      content="YourHouse starter platform for architectural houses, villas, and modern real estate with English-first i18n and Light/Dark themes."
+      content="YourHouse architectural studio and curated modern residences crafted with enduring form, natural light, and spatial precision."
     />
     <meta
       property="og:title"
-      content="YourHouse | Architectural Homes &amp; Real Estate"
+      content="YourHouse | Designing Spaces That Shape Experiences"
     />
     <meta
       property="og:description"
-      content="YourHouse starter platform for architectural houses, villas, and modern real estate with English-first i18n and Light/Dark themes."
+      content="YourHouse architectural studio and curated modern residences crafted with enduring form, natural light, and spatial precision."
     />
     <meta property="og:type" content="website" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
 
@@ -42,70 +42,489 @@
     <script src="js/main.js" defer></script>
   </head>
   <body>
-    <header class="starter-header">
-      <div class="container starter-header-inner">
-        <a href="#" class="starter-brand">
-          <img
-            src="assets/images/favicon.svg"
-            alt=""
-            width="28"
-            height="28"
-          />
-          <span data-i18n="app.brand">YourHouse</span>
-        </a>
+    <!-- Section 1: Hero & Navigation -->
+    <section id="home" class="hero">
+      <img
+        src="assets/images/hero-villa.jpg"
+        alt="Futuristic matte-black cantilevered glass villa at twilight"
+        class="hero-bg"
+      />
+      <div class="hero-scrim" aria-hidden="true"></div>
 
-        <div class="starter-controls">
-          <div class="control-pill" role="group" aria-label="Language switcher">
-            <button
-              type="button"
-              class="lang-btn is-active"
-              data-lang-btn="en"
-              aria-pressed="true"
+      <header class="site-header">
+        <div class="container header-inner">
+          <a href="#home" class="brand-link">
+            <svg
+              class="brand-mark"
+              viewBox="0 0 28 28"
+              fill="none"
+              aria-hidden="true"
             >
-              EN
-            </button>
-            <button
-              type="button"
-              class="lang-btn"
-              data-lang-btn="vi"
-              aria-pressed="false"
-            >
-              VI
-            </button>
+              <path
+                d="M4 12.5L14 4L24 12.5V24H17.5V16.5C17.5 14.567 15.933 13 14 13C12.067 13 10.5 14.567 10.5 16.5V24H4V12.5Z"
+                fill="currentColor"
+              />
+            </svg>
+            <span data-i18n="hero.brand">YOURHOUSE</span>
+          </a>
+
+          <div class="header-right">
+            <nav class="nav-pill" aria-label="Primary navigation">
+              <a href="#home" class="nav-link is-active" data-i18n="nav.home">HOME</a>
+              <a href="#about" class="nav-link" data-i18n="nav.about">ABOUT</a>
+              <a href="#projects" class="nav-link" data-i18n="nav.projects">PROJECTS</a>
+              <a href="#services" class="nav-link" data-i18n="nav.services">SERVICES</a>
+              <a href="#studio" class="nav-link" data-i18n="nav.studio">STUDIO</a>
+              <a href="#contact" class="nav-link" data-i18n="nav.contact">CONTACT US</a>
+            </nav>
+
+            <div class="header-utilities">
+              <div class="util-pill" role="group" aria-label="Language switcher">
+                <button
+                  type="button"
+                  class="lang-btn is-active"
+                  data-lang-btn="en"
+                  aria-pressed="true"
+                >
+                  EN
+                </button>
+                <button
+                  type="button"
+                  class="lang-btn"
+                  data-lang-btn="vi"
+                  aria-pressed="false"
+                >
+                  VI
+                </button>
+              </div>
+
+              <button
+                type="button"
+                class="theme-toggle"
+                data-theme-toggle
+                aria-pressed="false"
+                aria-label="Switch to dark theme"
+              >
+                <svg
+                  class="theme-icon theme-icon--moon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <svg
+                  class="theme-icon theme-icon--sun"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="4"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  />
+                  <path
+                    d="M12 2V4M12 20V22M4.93 4.93L6.34 6.34M17.66 17.66L19.07 19.07M2 12H4M20 12H22M6.34 17.66L4.93 19.07M19.07 4.93L17.66 6.34"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                  />
+                </svg>
+                <span class="sr-only" data-theme-label>Dark</span>
+              </button>
+
+              <button
+                type="button"
+                class="menu-toggle"
+                data-menu-toggle
+                aria-expanded="false"
+                aria-controls="mobile-nav"
+                data-i18n-aria="nav.menuAria"
+                aria-label="Toggle navigation menu"
+              >
+                <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path
+                    d="M3 6H17M3 10H17M3 14H17"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
+        </div>
 
-          <button
-            type="button"
-            class="theme-toggle"
-            data-theme-toggle
-            aria-pressed="false"
-            aria-label="Switch to dark theme"
-          >
-            <span data-theme-label>Dark</span>
-          </button>
+        <nav id="mobile-nav" class="mobile-nav" data-mobile-nav aria-label="Mobile navigation">
+          <a href="#home" class="nav-link" data-i18n="nav.home">HOME</a>
+          <a href="#about" class="nav-link" data-i18n="nav.about">ABOUT</a>
+          <a href="#projects" class="nav-link" data-i18n="nav.projects">PROJECTS</a>
+          <a href="#services" class="nav-link" data-i18n="nav.services">SERVICES</a>
+          <a href="#studio" class="nav-link" data-i18n="nav.studio">STUDIO</a>
+          <a href="#contact" class="nav-link" data-i18n="nav.contact">CONTACT US</a>
+        </nav>
+      </header>
+
+      <div class="hero-content">
+        <div class="container">
+          <div class="hero-title-wrap">
+            <h1 class="hero-title">
+              <span class="hero-line" data-i18n="hero.line1">Designing spaces</span>
+              <span class="hero-line hero-line--middle">
+                <svg
+                  class="hero-rings"
+                  viewBox="0 0 180 56"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <rect x="2" y="2" width="176" height="52" rx="26" stroke="currentColor" stroke-width="1.1" />
+                  <rect x="8" y="8" width="164" height="40" rx="20" stroke="currentColor" stroke-width="1.1" />
+                  <rect x="14" y="14" width="152" height="28" rx="14" stroke="currentColor" stroke-width="1.1" />
+                  <rect x="20" y="20" width="140" height="16" rx="8" stroke="currentColor" stroke-width="1.1" />
+                </svg>
+                <span data-i18n="hero.line2">that shape</span>
+              </span>
+              <span class="hero-line" data-i18n="hero.line3">experiences</span>
+            </h1>
+          </div>
         </div>
       </div>
-    </header>
+    </section>
 
-    <main class="starter-main">
-      <div class="container">
-        <section class="starter-card">
-          <span class="starter-eyebrow" data-i18n="app.eyebrow">
-            STARTER FOUNDATION
-          </span>
-          <h1 class="starter-title" data-i18n="app.title">
-            YourHouse Source Ready
-          </h1>
-          <p class="starter-subtitle" data-i18n="app.subtitle">
-            Modular HTML5, CSS3 design tokens, English-first i18n (EN / VI), and
-            Light &amp; Dark theme support are configured and ready for UI
-            sections.
-          </p>
-          <span class="starter-badge" data-i18n="app.statusReady">
-            i18n &amp; Theme Modules Active
-          </span>
-        </section>
-      </div>
+    <main>
+      <!-- Section 2: Spaces that speak -->
+      <section id="about" class="spaces-section">
+        <div class="container">
+          <div class="spaces-top reveal">
+            <div class="spaces-copy">
+              <h2 class="section-heading">
+                <span data-i18n="spaces.titleLine1">Spaces</span><br />
+                <span data-i18n="spaces.titleLine2">that speak</span>
+              </h2>
+              <p class="spaces-desc" data-i18n="spaces.description">
+                Discover thoughtfully designed residences where modern architecture, refined spaces, and exceptional amenities come together to create a better living experience.
+              </p>
+            </div>
+
+            <div class="spaces-cards">
+              <article class="feature-card">
+                <svg class="starburst-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                  <path
+                    d="M24 4V44M4 24H44M9.86 9.86L38.14 38.14M38.14 9.86L9.86 38.14"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+                <div class="feature-card-body">
+                  <h3 class="feature-card-title" data-i18n="spaces.card1Title">
+                    Contemporary Visioning
+                  </h3>
+                  <p class="feature-card-desc" data-i18n="spaces.card1Desc">
+                    Sculptural proportions and open sightlines shaped around daylight, landscape, and calm daily living.
+                  </p>
+                </div>
+              </article>
+
+              <article class="feature-card">
+                <svg class="starburst-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                  <path
+                    d="M24 4V44M4 24H44M9.86 9.86L38.14 38.14M38.14 9.86L9.86 38.14"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+                <div class="feature-card-body">
+                  <h3 class="feature-card-title" data-i18n="spaces.card2Title">
+                    Artistic Form Balance
+                  </h3>
+                  <p class="feature-card-desc" data-i18n="spaces.card2Desc">
+                    Harmonizing raw concrete, warm timber, and glass to craft residences with timeless visual poise.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="spaces-gallery reveal">
+            <article class="photo-card photo-card--wide">
+              <img
+                src="assets/images/space-customized.jpg"
+                alt="Modernist concrete and glass hillside villa at sunset"
+                loading="lazy"
+              />
+              <div class="photo-card-scrim" aria-hidden="true"></div>
+              <h3 class="photo-card-title" data-i18n="spaces.photo1Title">
+                Customized Design
+              </h3>
+            </article>
+
+            <article class="photo-card photo-card--tall">
+              <img
+                src="assets/images/space-elegant.jpg"
+                alt="Warm sandstone and terracotta luxury modern house at twilight"
+                loading="lazy"
+              />
+              <div class="photo-card-scrim" aria-hidden="true"></div>
+              <h3 class="photo-card-title" data-i18n="spaces.photo2Title">
+                Elegant Living Design
+              </h3>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Quality, urbanity, sustainability -->
+      <section id="projects" class="quality-section">
+        <div class="container">
+          <div class="quality-header reveal">
+            <h2 class="section-heading">
+              <span data-i18n="quality.titleLine1">Quality, urbanity,</span><br />
+              <span data-i18n="quality.titleLine2">sustainability</span>
+            </h2>
+
+            <div class="quality-status">
+              <h3 class="quality-status-title" data-i18n="quality.statusTitle">
+                Work in Process
+              </h3>
+              <p class="quality-status-desc" data-i18n="quality.statusDesc">
+                Discover thoughtfully designed residences where modern architecture, refined spaces, and sustainable craft elevate everyday living.
+              </p>
+            </div>
+          </div>
+
+          <div class="specs-grid reveal">
+            <div class="spec-item">
+              <span class="spec-label" data-i18n="quality.specNameLabel">Project Name</span>
+              <span class="spec-value" data-i18n="quality.specNameValue">AH54K</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label" data-i18n="quality.specLocationLabel">Location</span>
+              <span class="spec-value" data-i18n="quality.specLocationValue">USA, Florida</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label" data-i18n="quality.specYearLabel">Year</span>
+              <span class="spec-value" data-i18n="quality.specYearValue">2026</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label" data-i18n="quality.specRoomLabel">Room</span>
+              <span class="spec-value" data-i18n="quality.specRoomValue">3-4</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label" data-i18n="quality.specAreaLabel">Total Area</span>
+              <span class="spec-value" data-i18n="quality.specAreaValue">1200 sq.m.</span>
+            </div>
+          </div>
+
+          <article class="quality-showcase reveal">
+            <img
+              src="assets/images/project-ah54k.jpg"
+              alt="Curved architectural pavilion clad in bronze-toned timber slats"
+              loading="lazy"
+            />
+            <div class="quality-showcase-scrim" aria-hidden="true"></div>
+            <p class="quality-quote" data-i18n="quality.quote">
+              Great architecture isn't just structure. It's a feeling. It's quiet light falling across stone at dawn, and spaces designed to elevate the rhythm of everyday living.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Section 4: What drives us forward -->
+      <section id="services" class="drives-section">
+        <div class="container">
+          <h2 class="section-heading reveal" data-i18n="drives.title">
+            What drives us forward
+          </h2>
+
+          <div class="drives-grid reveal">
+            <article class="drive-card drive-card--dark">
+              <h3 class="drive-card-title" data-i18n="drives.card1Title">
+                We invest in the unexpected
+              </h3>
+              <div class="drive-ribbon-wrap">
+                <svg class="drive-ribbon" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                  <path
+                    d="M24 14H46C48.2 14 50 15.8 50 18V32C50 36.4 46.4 40 42 40H36C33.8 40 32 41.8 32 44V46C32 48.2 30.2 50 28 50H18C15.8 50 14 48.2 14 46V32C14 27.6 17.6 24 22 24H28C30.2 24 32 22.2 32 20V18C32 15.8 29.8 14 24 14Z"
+                    fill="#FFFFFF"
+                  />
+                </svg>
+              </div>
+              <p class="drive-card-desc" data-i18n="drives.card1Desc">
+                Exploring bold structural geometry and tactile natural materials to shape unforgettable living spaces.
+              </p>
+            </article>
+
+            <article class="drive-card drive-card--photo">
+              <img
+                src="assets/images/project-ah54k.jpg"
+                alt="Sweeping curved timber slat architectural facade"
+                loading="lazy"
+              />
+            </article>
+
+            <article class="drive-card drive-card--light">
+              <h3 class="drive-card-title" data-i18n="drives.card3Title">
+                Crafted for permanence, never fleeting trends
+              </h3>
+              <svg class="drive-pixel-cross" viewBox="0 0 96 96" fill="none" aria-hidden="true">
+                <rect x="32" y="0" width="32" height="32" fill="currentColor" />
+                <rect x="0" y="32" width="32" height="32" fill="currentColor" />
+                <rect x="64" y="32" width="32" height="32" fill="currentColor" />
+                <rect x="32" y="64" width="32" height="32" fill="currentColor" />
+              </svg>
+            </article>
+
+            <article class="drive-card drive-card--photo">
+              <img
+                src="assets/images/drive-facade.jpg"
+                alt="Terracotta concrete modern corner facade against clear blue sky"
+                loading="lazy"
+              />
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 5: Spaces worth experiencing. -->
+      <section id="studio" class="experiences-section">
+        <div class="container">
+          <h2 class="section-heading section-heading--white reveal">
+            <span data-i18n="experiences.titleLine1">Spaces worth</span><br />
+            <span data-i18n="experiences.titleLine2">experiencing.</span>
+          </h2>
+
+          <div class="experiences-grid reveal">
+            <article class="exp-card">
+              <div class="exp-media">
+                <img
+                  src="assets/images/exp-waterfront.jpg"
+                  alt="Sculptural angular white concrete luxury waterfront villa at dusk"
+                  loading="lazy"
+                />
+              </div>
+              <h3 class="exp-caption" data-i18n="experiences.item1">
+                Luxury waterfront villa
+              </h3>
+            </article>
+
+            <article class="exp-card">
+              <div class="exp-media">
+                <img
+                  src="assets/images/exp-soles.jpg"
+                  alt="Organic curved travertine concrete modern residence"
+                  loading="lazy"
+                />
+              </div>
+              <h3 class="exp-caption" data-i18n="experiences.item2">
+                The soles house
+              </h3>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 6: Where bold ideas meet belief -->
+      <section class="belief-section">
+        <div class="container">
+          <div class="belief-card reveal">
+            <div class="belief-left">
+              <h2 class="belief-title">
+                <span data-i18n="belief.titleLine1">Where bold ideas</span><br />
+                <span data-i18n="belief.titleLine2">meet belief</span>
+              </h2>
+
+              <div class="belief-foot">
+                <svg class="belief-rings" viewBox="0 0 110 38" fill="none" aria-hidden="true">
+                  <rect x="1" y="1" width="108" height="36" rx="18" stroke="currentColor" stroke-width="1" />
+                  <rect x="6" y="6" width="98" height="26" rx="13" stroke="currentColor" stroke-width="1" />
+                  <rect x="11" y="11" width="88" height="16" rx="8" stroke="currentColor" stroke-width="1" />
+                </svg>
+                <p class="belief-caption" data-i18n="belief.caption">
+                  We envision landmark residences before the first line is drawn.
+                </p>
+              </div>
+            </div>
+
+            <div class="belief-media">
+              <img
+                src="assets/images/belief-concrete.jpg"
+                alt="Cantilevered concrete and glass upper volume reflecting sunset clouds"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 7: Discover your next home awaits -->
+      <section class="cta-section">
+        <img
+          src="assets/images/cta-modern-house.jpg"
+          alt="Desert modern angular concrete residence with infinity pool at dusk"
+          class="cta-bg"
+          loading="lazy"
+        />
+        <div class="cta-scrim" aria-hidden="true"></div>
+
+        <div class="container cta-inner">
+          <div class="property-card-wrap reveal">
+            <article class="property-card">
+              <h3 class="property-card-title" data-i18n="cta.cardTitle">
+                Modern House
+              </h3>
+              <p class="property-card-meta">
+                <span data-i18n="cta.cardAddress">321 Maple Lane, Oakwood TX 4822</span><br />
+                <span data-i18n="cta.cardPrice">$700,000</span>
+              </p>
+              <div class="property-card-specs">
+                <span data-i18n="cta.cardBed">4 Bedroom</span>
+                <span aria-hidden="true">|</span>
+                <span data-i18n="cta.cardBath">3 Washroom</span>
+                <span aria-hidden="true">|</span>
+                <span data-i18n="cta.cardArea">1500 sqft</span>
+              </div>
+            </article>
+          </div>
+
+          <h2 class="cta-title reveal">
+            <span data-i18n="cta.titleLine1">Discover your</span><br />
+            <span data-i18n="cta.titleLine2">next home awaits</span>
+          </h2>
+        </div>
+      </section>
     </main>
+
+    <!-- Section 8: Footer -->
+    <footer id="contact" class="site-footer">
+      <div class="container">
+        <div class="footer-top">
+          <nav class="footer-nav" aria-label="Footer navigation">
+            <a href="#home" data-i18n="nav.home">Home</a>
+            <a href="#projects" data-i18n="nav.work">Work</a>
+            <a href="#about" data-i18n="nav.about">About</a>
+            <a href="#services" data-i18n="nav.services">Services</a>
+            <a href="#contact" data-i18n="nav.contact">Contact</a>
+          </nav>
+
+          <div class="footer-locations">
+            <div data-i18n="footer.location1">San Diego California</div>
+            <div data-i18n="footer.location2">Paris France</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-wordmark" data-i18n="footer.wordmark">yourhouse</div>
+    </footer>
   </body>
 </html>

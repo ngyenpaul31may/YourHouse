@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "YourHouse | Nhà Ở Kiến Trúc & Bất Động Sản",
-    "description": "Khung mã nguồn YourHouse dành cho nhà ở kiến trúc, biệt thự và bất động sản hiện đại với đa ngôn ngữ mặc định Tiếng Anh và 2 theme Sáng/Tối."
+    "title": "YourHouse | Kiến Tạo Không Gian Định Hình Trải Nghiệm",
+    "description": "Studio kiến trúc YourHouse và bộ sưu tập nhà ở hiện đại được chế tác với hình khối bền vững, ánh sáng tự nhiên và tỷ lệ tinh tế."
   },
   "theme": {
     "light": "Sáng",
@@ -9,11 +9,80 @@
     "switchToDark": "Chuyển sang giao diện tối",
     "switchToLight": "Chuyển sang giao diện sáng"
   },
-  "app": {
-    "brand": "YourHouse",
-    "eyebrow": "KHUNG MÃ NGUỒN KHỞI TẠO",
-    "title": "Mã Nguồn YourHouse Đã Sẵn Sàng",
-    "subtitle": "Cấu trúc HTML5, CSS3 design tokens, hệ thống đa ngôn ngữ i18n (mặc định Tiếng Anh EN / Tiếng Việt VI) và 2 theme Sáng & Tối đã sẵn sàng để phát triển giao diện.",
-    "statusReady": "i18n & Theme Đang Hoạt Động"
+  "nav": {
+    "home": "TRANG CHỦ",
+    "about": "GIỚI THIỆU",
+    "projects": "DỰ ÁN",
+    "services": "DỊCH VỤ",
+    "studio": "STUDIO",
+    "contact": "LIÊN HỆ",
+    "work": "Tác phẩm",
+    "menuAria": "Mở hoặc đóng menu điều hướng"
+  },
+  "hero": {
+    "brand": "YOURHOUSE",
+    "line1": "Kiến tạo không gian",
+    "line2": "định hình",
+    "line3": "trải nghiệm sống"
+  },
+  "spaces": {
+    "titleLine1": "Không gian",
+    "titleLine2": "biết lên tiếng",
+    "description": "Khám phá những ngôi nhà được thiết kế tỉ mỉ, nơi kiến trúc hiện đại, không gian tinh giản và tiện nghi đẳng cấp hòa quyện để nâng tầm cuộc sống.",
+    "card1Title": "Tầm nhìn Đương đại",
+    "card1Desc": "Tỷ lệ điêu khắc và tầm nhìn mở được định hình theo ánh sáng tự nhiên, cảnh quan và nhịp sống an yên.",
+    "card2Title": "Cân bằng Hình khối",
+    "card2Desc": "Kết hợp hài hòa bê tông thô, gỗ ấm và kính lớn để tạo nên công trình vững bền cùng thời gian.",
+    "photo1Title": "Thiết kế Cá nhân hóa",
+    "photo2Title": "Không gian Sống Thanh lịch"
+  },
+  "quality": {
+    "titleLine1": "Chất lượng, đô thị,",
+    "titleLine2": "bền vững",
+    "statusTitle": "Đang Triển Khai",
+    "statusDesc": "Khám phá những công trình được thiết kế tinh tế, nơi kiến trúc hiện đại và vật liệu bền vững nâng tầm trải nghiệm sống.",
+    "specNameLabel": "Tên Dự Án",
+    "specNameValue": "AH54K",
+    "specLocationLabel": "Địa Điểm",
+    "specLocationValue": "Hoa Kỳ, Florida",
+    "specYearLabel": "Năm",
+    "specYearValue": "2026",
+    "specRoomLabel": "Số Phòng",
+    "specRoomValue": "3-4",
+    "specAreaLabel": "Tổng Diện Tích",
+    "specAreaValue": "1200 m²",
+    "quote": "Kiến trúc đích thực không chỉ là kết cấu. Đó là cảm xúc, là tia nắng sớm khẽ chạm mặt đá và những khoảng không gian nâng niu từng khoảnh khắc sống."
+  },
+  "drives": {
+    "title": "Điều thúc đẩy chúng tôi",
+    "card1Title": "Đầu tư vào sự khác biệt",
+    "card1Desc": "Tìm tòi hình khối táo bạo và vật liệu tự nhiên giàu cảm xúc để kiến tạo không gian sống đáng nhớ.",
+    "card3Title": "Chế tác cho giá trị bền lâu, không chạy theo xu hướng"
+  },
+  "experiences": {
+    "titleLine1": "Những không gian",
+    "titleLine2": "đáng trải nghiệm.",
+    "item1": "Biệt thự ven biển cao cấp",
+    "item2": "Ngôi nhà Soles"
+  },
+  "belief": {
+    "titleLine1": "Nơi ý tưởng táo bạo",
+    "titleLine2": "gặp gỡ niềm tin",
+    "caption": "Chúng tôi hình dung những công trình biểu tượng trước cả khi nét vẽ đầu tiên thành hình."
+  },
+  "cta": {
+    "titleLine1": "Khám phá ngôi nhà",
+    "titleLine2": "tiếp theo của bạn",
+    "cardTitle": "Biệt Thự Hiện Đại",
+    "cardAddress": "321 Maple Lane, Oakwood TX 4822",
+    "cardPrice": "$700,000",
+    "cardBed": "4 Phòng ngủ",
+    "cardBath": "3 Phòng tắm",
+    "cardArea": "1500 sqft"
+  },
+  "footer": {
+    "location1": "San Diego California",
+    "location2": "Paris France",
+    "wordmark": "yourhouse"
   }
 }

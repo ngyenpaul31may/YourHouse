@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "YourHouse | Architectural Homes & Real Estate",
-    "description": "YourHouse starter platform for architectural houses, villas, and modern real estate with English-first i18n and Light/Dark themes."
+    "title": "YourHouse | Designing Spaces That Shape Experiences",
+    "description": "YourHouse architectural studio and curated modern residences crafted with enduring form, natural light, and spatial precision."
   },
   "theme": {
     "light": "Light",
@@ -9,11 +9,80 @@
     "switchToDark": "Switch to dark theme",
     "switchToLight": "Switch to light theme"
   },
-  "app": {
-    "brand": "YourHouse",
-    "eyebrow": "STARTER FOUNDATION",
-    "title": "YourHouse Source Ready",
-    "subtitle": "Modular HTML5, CSS3 design tokens, English-first i18n (EN / VI), and Light & Dark theme support are configured and ready for UI sections.",
-    "statusReady": "i18n & Theme Modules Active"
+  "nav": {
+    "home": "HOME",
+    "about": "ABOUT",
+    "projects": "PROJECTS",
+    "services": "SERVICES",
+    "studio": "STUDIO",
+    "contact": "CONTACT US",
+    "work": "Work",
+    "menuAria": "Toggle navigation menu"
+  },
+  "hero": {
+    "brand": "YOURHOUSE",
+    "line1": "Designing spaces",
+    "line2": "that shape",
+    "line3": "experiences"
+  },
+  "spaces": {
+    "titleLine1": "Spaces",
+    "titleLine2": "that speak",
+    "description": "Discover thoughtfully designed residences where modern architecture, refined spaces, and exceptional amenities come together to create a better living experience.",
+    "card1Title": "Contemporary Visioning",
+    "card1Desc": "Sculptural proportions and open sightlines shaped around daylight, landscape, and calm daily living.",
+    "card2Title": "Artistic Form Balance",
+    "card2Desc": "Harmonizing raw concrete, warm timber, and glass to craft residences with timeless visual poise.",
+    "photo1Title": "Customized Design",
+    "photo2Title": "Elegant Living Design"
+  },
+  "quality": {
+    "titleLine1": "Quality, urbanity,",
+    "titleLine2": "sustainability",
+    "statusTitle": "Work in Process",
+    "statusDesc": "Discover thoughtfully designed residences where modern architecture, refined spaces, and sustainable craft elevate everyday living.",
+    "specNameLabel": "Project Name",
+    "specNameValue": "AH54K",
+    "specLocationLabel": "Location",
+    "specLocationValue": "USA, Florida",
+    "specYearLabel": "Year",
+    "specYearValue": "2026",
+    "specRoomLabel": "Room",
+    "specRoomValue": "3-4",
+    "specAreaLabel": "Total Area",
+    "specAreaValue": "1200 sq.m.",
+    "quote": "Great architecture isn't just structure. It's a feeling. It's quiet light falling across stone at dawn, and spaces designed to elevate the rhythm of everyday living."
+  },
+  "drives": {
+    "title": "What drives us forward",
+    "card1Title": "We invest in the unexpected",
+    "card1Desc": "Exploring bold structural geometry and tactile natural materials to shape unforgettable living spaces.",
+    "card3Title": "Crafted for permanence, never fleeting trends"
+  },
+  "experiences": {
+    "titleLine1": "Spaces worth",
+    "titleLine2": "experiencing.",
+    "item1": "Luxury waterfront villa",
+    "item2": "The soles house"
+  },
+  "belief": {
+    "titleLine1": "Where bold ideas",
+    "titleLine2": "meet belief",
+    "caption": "We envision landmark residences before the first line is drawn."
+  },
+  "cta": {
+    "titleLine1": "Discover your",
+    "titleLine2": "next home awaits",
+    "cardTitle": "Modern House",
+    "cardAddress": "321 Maple Lane, Oakwood TX 4822",
+    "cardPrice": "$700,000",
+    "cardBed": "4 Bedroom",
+    "cardBath": "3 Washroom",
+    "cardArea": "1500 sqft"
+  },
+  "footer": {
+    "location1": "San Diego California",
+    "location2": "Paris France",
+    "wordmark": "yourhouse"
   }
 }
