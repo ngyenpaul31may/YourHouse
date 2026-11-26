@@ -6,6 +6,7 @@
   function initMobileMenu() {
     const toggle = document.querySelector("[data-menu-toggle]");
     const menu = document.querySelector("[data-mobile-nav]");
+    const header = document.querySelector(".site-header");
     if (!toggle || !menu) return;
 
     const closeMenu = () => {
@@ -23,16 +24,46 @@
       link.addEventListener("click", closeMenu);
     });
 
+    document.addEventListener("click", (event) => {
+      if (menu.classList.contains("is-open") && header && !header.contains(event.target)) {
+        closeMenu();
+      }
+    });
+
     document.addEventListener("keydown", (event) => {
       if (event.key === "Escape") closeMenu();
     });
+
+    if (window.matchMedia) {
+      const desktopMedia = window.matchMedia("(min-width: 1025px)");
+      const handleDesktopChange = (event) => {
+        if (event.matches) closeMenu();
+      };
+
+      if (desktopMedia.addEventListener) {
+        desktopMedia.addEventListener("change", handleDesktopChange);
+      } else if (desktopMedia.addListener) {
+        desktopMedia.addListener(handleDesktopChange);
+      }
+    }
   }
 
   function initActiveNav() {
-    const navLinks = Array.from(document.querySelectorAll(".nav-pill .nav-link[href^='#']"));
-    const sections = navLinks
-      .map((link) => document.querySelector(link.getAttribute("href")))
-      .filter(Boolean);
+    const navLinks = Array.from(
+      document.querySelectorAll(
+        ".nav-pill .nav-link[href^='#'], .mobile-nav .nav-link[href^='#']",
+      ),
+    );
+    const sections = Array.from(
+      new Set(
+        navLinks
+          .map((link) => {
+            const href = link.getAttribute("href");
+            return href && href.length > 1 ? document.querySelector(href) : null;
+          })
+          .filter(Boolean),
+      ),
+    );
 
     if (!navLinks.length || !sections.length) return;
 
